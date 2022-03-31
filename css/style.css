@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   box-sizing: border-box;
@@ -6,49 +7,42 @@
   font-family: "Roboto", sans-serif;
 }
 
-.hamburger-icon {
-  background: url("/img/MenuHamburger.png");
-  height: 12px;
-  width: 18px;
-  display: block;
-}
-
-.home-icon {
-  background: url("/img/Home.png");
-  height: 20px;
-  width: 17px;
-  display: block;
-}
-
-.profile-icon {
-  background: url("/img/Profile.png");
-  height: 18px;
-  width: 18px;
-  display: block;
-}
-
-.cart-icon {
-  background: url("/img/Cart.png");
-  height: 20px;
-  width: 20px;
-  display: block;
-}
-
-.gear-icon {
-  background: url("/img/Gear.png");
-  height: 19.45px;
-  width: 20px;
-  display: block;
-}
-
 .top-nav {
   border-color: #e8e8e8;
 }
 .top-nav input {
-  color: #e8e8e8;
+  color: black;
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
+}
+
+input[type=checkbox]:checked {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border-color: #00ba76;
+  background-color: #00ba76;
+  box-shadow: 0 0 #00ba76;
+  -webkit-box-shadow: 0 0 #00ba76;
+  -moz-box-shadow: 0 0 #00ba76;
+  content: "✔";
+}
+
+input[type=checkbox] {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border-width: 2px;
+  border: solid;
+  border-color: #e8e8e8;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -10,36 +10,455 @@
   </head>
 
   <body>
-    <div class="container h-screen">
+    <div class="container flex flex-col h-screen">
       <!-- Navigation Menu -->
       <div
-        class="top-nav border border-light-gray max-w-ms flex flex-row flex-wrap items-center justify-between py-1.5 px-4 h-1/8"
+        class="top-nav border border-light-gray max-w-ms flex flex-row flex-wrap items-center justify-between py-1.5 px-4"
       >
-        <a class="h-fit" href=""><i class="hamburger-icon"></i></a>
+        <img
+          class="cursor-pointer"
+          src="img/MenuHamburger.svg"
+          alt=""
+          onclick="toggleMenu()"
+        />
         <a class="px-6" href="www.tam.com"
-          ><img src="img/Logo.png" alt="tam-logo"
+          ><img src="img/Logo.svg" alt="tam-logo"
         /></a>
+
         <div class="grow"></div>
         <input
           class="border py-2 px-4 shrink w-[23rem] rounded border-light-gray mx-3 my-1"
           type="text"
           placeholder="Search"
+          onkeyup="search(this)"
         />
-
-        <!-- <div>
-        <a href="#"><i class="home-icon"></i></a>
-        <a href="#"><i class="profile-icon"></i></a>
-        <a href="#"><i class="cart-icon"></i></a>
-        <a href="#"><i class="gear-icon"></i></a>
-      </div> -->
       </div>
+      <!-- Navigation Menu End -->
 
       <!-- Two-column layout -->
-      <div class="border-4 botder-black h-full">
-        <h1>hla</h1>
-        <div class="right-side"></div>
-        <div class="left-side"></div>
+      <div class="flex flex-row flex-nowrap grow">
+        <!-- Left-column -->
+        <div
+          class="basis-2/12 justify-between flex flex-col flex-nowrap bg-[#FBFBFB] border-r border-light-gray"
+        >
+          <!-- drop-menu -->
+          <div id="drop-menu" class="w-full hidden">
+            <div class="h-12 pl-6 py-3">
+              <img class="inline" src="/img/Home.svg" alt="" />
+              <h1
+                class="inline pl-4 text-sm font-normal text-[#E9471C] leading-6"
+              >
+                Home
+              </h1>
+            </div>
+
+            <div class="h-12 pl-6 py-3">
+              <img class="inline" src="/img/Profile.svg" alt="" />
+              <h1 class="inline pl-4 text-sm font-normal text-gray leading-6">
+                Users
+              </h1>
+            </div>
+
+            <div class="h-12 pl-6 py-3">
+              <img class="inline" src="/img/Cart.svg" alt="" />
+              <h1 class="inline pl-4 text-sm font-normal text-gray leading-6">
+                Shopping
+              </h1>
+            </div>
+
+            <div class="h-12 pl-6 py-3">
+              <img class="inline" src="/img/Gear.svg" alt="" />
+              <h1 class="inline pl-4 text-sm font-normal text-gray leading-6">
+                Settings
+              </h1>
+            </div>
+          </div>
+          <!-- drop-menu End -->
+
+          <div class="grow"></div>
+
+          <!-- Log-in Card -->
+          <div class="border-t border-light-gray h-16 p-3 flex items-center">
+            <!-- Name Circle -->
+            <div
+              class="rounded-[21px] bg-light-gray h-8 w-[2.1563rem] flex justify-center items-center flex-initial"
+            >
+              <h1 class="text-[11px] font-normal text-gray leading-[0.6875rem]">
+                JD
+              </h1>
+            </div>
+            <!-- Name Circle End -->
+
+            <!-- Name-position Div -->
+            <div class="flex-initial pl-2 text-[11px] leading-[0.6875rem]">
+              <h1 class="font-medium text-gray">John Duo</h1>
+              <h1 class="font-normal text-gray/50">Manager</h1>
+            </div>
+            <!-- Name-position Div End-->
+            <div class="grow"></div>
+
+            <a href="#">
+              <img src="img/DownwardArrow.svg" alt="" />
+            </a>
+          </div>
+          <!-- Log-in Card End -->
+        </div>
+        <!-- Left-column End -->
+
+        <!-- Right-column -->
+        <div class="basis-10/12 flex-auto p-8">
+          <!-- Design Category Block -->
+          <div class="w-full mb-6">
+            <h1 class="text-[14px] leading-6 font-normal">Design:</h1>
+            <div class="border border-light-gray rounded mt-3 p-4">
+              <div class="flex items-center py-1 task" id="div-1">
+                <input
+                  id="input-1"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-1"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Prepare the overall layout</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-2">
+                <input
+                  id="input-2"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-2"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Convert the design to HTML + CSS</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-3">
+                <input
+                  id="input-3"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-3"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Make the design responsive and fits well with small
+                  screens</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-4">
+                <input
+                  id="input-4"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-4"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Use Sass as your CSS preprocessor</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-5">
+                <input
+                  id="input-5"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-5"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Use Roboto font</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-6">
+                <input
+                  id="input-6"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-6"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Spacing in the design is strictly using multiple of 8. Use
+                  8px as a reference</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-7">
+                <input
+                  id="input-7"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-7"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Use Tailwind CSS</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Design Category Block End-->
+
+          <!-- Functionality Category Block -->
+          <div class="w-full mb-6">
+            <h1 class="text-[14px] leading-6 font-normal">Functionality:</h1>
+
+            <div class="border border-light-gray rounded mt-3 p-4">
+              <div class="flex items-center py-1 task" id="div-8">
+                <input
+                  id="input-8"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-8"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Add the functionality to mark tasks as completed</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-9">
+                <input
+                  id="input-9"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-9"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Add the ability to toggle the side-menu</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-10">
+                <input
+                  id="input-10"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-10"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Add the functionality to search through tasks</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-11">
+                <input
+                  id="input-11"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-11"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Submit the final work in a git repository</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Functionality Category Block End -->
+
+          <!-- Extra Category Block -->
+          <div class="w-full mb-6">
+            <h1 class="text-[14px] leading-6 font-normal">
+              Extra (If the time allows)
+            </h1>
+
+            <div class="border border-light-gray rounded mt-3 p-4">
+              <div class="flex items-center py-1 task" id="div-12">
+                <input
+                  id="input-12"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-12"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Use NPM/Yarn to manage packages, run a web server and compile
+                  SASS files</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-13">
+                <input
+                  id="input-13"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-13"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Add your own touch to improve the application and explain why
+                  you did so</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-14">
+                <input
+                  id="input-14"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-14"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Make the website bilingual (English and Arabic) and the
+                  direction to be left-to-right and right-to-left (You can
+                  ignore the content translation)</label
+                >
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+
+              <div class="flex items-center py-1 task" id="div-15">
+                <input
+                  id="input-15"
+                  type="checkbox"
+                  name="name"
+                  onclick="toggle(this);"
+                />
+                <label
+                  id="label-15"
+                  for="name"
+                  class="px-4 text-[14px] leading-6 text-gray font-normal"
+                  >Design a UI/UX solution for adding new tasks and groups, you
+                  can use Figma or any other UI design software
+                </label>
+
+                <div class="grow"></div>
+
+                <a href="#">
+                  <img src="img/dots.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Extra Category Block End -->
+        </div>
+        <!-- left-column End -->
       </div>
+
+      <!-- Two-column Layout End-->
     </div>
   </body>
+  <script src="index.js"></script>
 </html>
